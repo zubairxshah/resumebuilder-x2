@@ -3,12 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Resume</title>
-    <link rel="stylesheet" href="resume-styles.css">
+    <title>Professional Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #resume-container h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        #resume-container h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+
+        #resume-container .profilePicture {
+            max-width: 150px;
+            border-radius: 50%;
+            float: right;
+            margin-left: 20px;
+            border: 2px solid #3498db;
+        }
+
+        #resume-container p {
+            margin-bottom: 10px;
+        }
+
+        #resume-container strong {
+            color: #2c3e50;
+        }
+
+        #resume-container .editable {
+            cursor: pointer;
+            padding: 2px 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        #resume-container .editable:hover {
+            background-color: #e0e0e0;
+        }
+
+        #resume-container .editing {
+            border: 1px solid #3498db;
+            padding: 2px 5px;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        #downloadButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        #downloadButton:hover {
+            background-color: #2980b9;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            #resume-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            #downloadButton {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="resume">
-        <h2>Resume</h2>
+    <div id="resume-container">
+        <h2>Professional Resume</h2>
         <img id="profilePicture" alt="Profile Picture" class="profilePicture">
         <p><strong>Name:</strong> <span id="name" class="editable"></p>
         <p><strong>Email:</strong> <span id="email" class="editable"></p>
@@ -23,6 +119,8 @@
 
         <h3>Skills</h3>
         <p id="skills" class="editable"></p>
+
+        <button id="downloadButton">Download Resume as PDF</button>
     </div>
     <script src="resume.js"></script>
 </body>
